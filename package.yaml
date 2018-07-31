@@ -1,0 +1,48 @@
+name:                ten-puzzle
+version:             0.1.0.0
+github:              "satosystems/ten-puzzle"
+license:             BSD3
+author:              "Satoshi Ogata"
+maintainer:          "satosystems@gmail.com"
+copyright:           "2018 Satoshi Ogata"
+
+extra-source-files:
+- README.md
+- ChangeLog.md
+
+# Metadata used when publishing your package
+synopsis:            Ten Puzzle
+category:            Program
+
+# To avoid duplicated efforts in documentation and dealing with the
+# complications of embedding Haddock markup inside cabal files, it is
+# common to point users to the README.md file.
+description:         Please see the README on GitHub at <https://github.com/satosystems/ten-puzzle#readme>
+
+dependencies:
+- base >= 4.7 && < 5
+
+library:
+  source-dirs: src
+
+executables:
+  ten-puzzle:
+    main:                Main.hs
+    source-dirs:         app
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - ten-puzzle
+
+tests:
+  test:
+    main:                Spec.hs
+    source-dirs:         test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - ten-puzzle
